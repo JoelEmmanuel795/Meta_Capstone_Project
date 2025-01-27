@@ -1,3 +1,4 @@
+import './Footer.css'
 import logo from "./logo_hor.png";
 
 function Footer(props) {

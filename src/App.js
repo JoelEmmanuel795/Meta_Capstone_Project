@@ -8,14 +8,13 @@ import Head from './Head';
 function App() {
   return (
     <>
-      <Head></Head>
+      <Head/>
       <body>
-        <Main>
           <Header>
             <Nav></Nav>
           </Header>
+          <Main>Just some body text</Main>
           <Footer/>
-        </Main>
       </body>
     </>
   );

@@ -1,0 +1,25 @@
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: #797979;
+    color: #fff;
+    gap: 40px;
+}
+
+footer div {
+    flex: 1;
+    margin: 0 10px;
+}
+
+@media (max-width: 768px) { /* Stack footer sections */
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer div {
+        margin: 10px 0;
+    }
+}
