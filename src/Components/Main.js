@@ -1,4 +1,4 @@
-import './Main.css'
+import '../CSS/Main.css'
 
 function Main(props) {
     return (

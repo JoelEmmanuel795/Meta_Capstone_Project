@@ -1,0 +1,153 @@
+/* Global reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700;800&family=Markazi+Text:wght@400;700&display=swap');
+
+/* App Grid with Left-Right Margins */
+.App {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* 12 equal columns */
+  grid-template-rows: auto 1fr 1fr auto; /* Rows for header, main, and footer */
+  grid-template-areas:
+    "nav nav nav nav nav nav nav nav nav nav nav nav "
+    "header header header header header header header header header header header header"
+    "main main main main main main main main main main main main"
+    "footer footer footer footer footer footer footer footer footer footer footer footer";
+  column-gap: 16px;
+}
+
+/* Nav Section */
+nav {
+  grid-area: nav;
+  grid-column: 3 / span 8; /* Center header (columns 3-10 out of 12) */
+}
+
+/* Header Section */
+header {
+  grid-area: header;
+  grid-column: 1 / span 12; /* Center header (columns 3-10 out of 12) */
+  text-align: center;
+}
+
+/* Main Content */
+main {
+  grid-area: main;
+  grid-column: 3 / span 8; /* Content spans columns 2-11 */
+}
+
+/* Footer Section */
+footer {
+  grid-area: footer;
+  grid-column: 1 / span 12; /* Full width for the footer */
+}
+
+/* Responsive Layouts */
+@media (max-width: 768px) {
+  .App {
+    grid-template-columns: repeat(10, 1fr); /* Adjust grid to 10 columns */
+  }
+
+  nav {
+    grid-column: 1 / span 1; /* Full-width header */
+  }
+
+  header {
+    grid-column: 0 / span 10; /* Center header (columns 2-9 out of 10) */
+  }
+
+  main {
+    grid-column: 1 / span 10; /* Full-width for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    grid-template-columns: 1fr; /* Single column layout */
+  }
+
+  nav {
+    grid-column: 1 / span 1; /* Full-width header */
+  }
+
+  header {
+    grid-column: 0 / span 1; /* Full-width header */
+  }
+
+  main {
+    grid-column: 0 / span 1; /* Full-width main content */
+  }
+}
+
+
+/* Typography Styles */
+
+/* Display Title */
+h1 {
+  font-family: 'Markazi Text', serif;
+  font-size: 64pt;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Sub title */
+h2 {
+  font-family: 'Markazi Text', serif;
+  font-size: 40pt;
+  font-weight: 700;
+  color: #333;
+}
+
+/* SECTION TITLE! */
+h3 {
+  font-family: 'Karla', sans-serif;
+  font-size: 20pt;
+  font-weight: 800; /* Extra Bold */
+  text-transform: uppercase;
+  color: #333;
+}
+
+/* Lead text! (Descr. items to catch attention) */
+h4 {
+  font-family: 'Karla', sans-serif;
+  font-size: 18pt;
+  font-weight: 500; /* Medium */
+  line-height: 1.2;
+  color: #333;
+}
+
+/* Section Categories (This weeks specials!) */
+h5 {
+  font-family: 'Karla', sans-serif;
+  font-size: 16pt;
+  font-weight: 800; /* Extra Bold */
+  color: #333;
+}
+
+/* Card Title */
+h6 {
+  font-family: 'Karla', sans-serif;
+  font-size: 18pt;
+  font-weight: 700; /* Bold */
+  color: #333;
+}
+
+/* Paragraph text regular */
+p {
+  font-family: 'Karla', sans-serif;
+  font-size: 16pt;
+  font-weight: 500; /* Medium */
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Add subtle box shadow for cards and buttons */
+.card, .btn {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+

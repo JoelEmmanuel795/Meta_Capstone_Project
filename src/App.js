@@ -1,21 +1,20 @@
-import './App.css';
-import Header from './Header';
-import Nav from './Nav';
-import Main from './Main';
-import Footer from './Footer';
-import Head from './Head';
+import './CSS/App.css';
+import Header from './Components/Header';
+import Nav from './Components/Nav';
+import Main from './Components/Main';
+import Footer from './Components/Footer';
+import Head from './Components/Head';
 
 function App() {
   return (
     <>
       <Head/>
-      <body>
-          <Header>
-            <Nav></Nav>
-          </Header>
-          <Main>Just some body text</Main>
-          <Footer/>
-      </body>
+      <div className="App">
+        <Nav/>
+        <Header><h1>Just some body text</h1></Header>
+        <Main><h2>Heyooo</h2><p>Yoohooo</p></Main>
+        <Footer/>
+      </div>
     </>
   );
 }

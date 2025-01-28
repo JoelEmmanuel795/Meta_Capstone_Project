@@ -1,3 +1,5 @@
+import '../CSS/Header.css'
+
 function Header(props) {
     return (
         <header>

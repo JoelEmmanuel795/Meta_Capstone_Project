@@ -1,4 +1,4 @@
-import restaurant from "./restaurant.jpg";
+import restaurant from "../Content/restaurant.jpg";
 
 function Head(props) {
     return (
