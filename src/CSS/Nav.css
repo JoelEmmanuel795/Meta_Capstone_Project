@@ -57,4 +57,8 @@ nav {
         align-items: center;
         gap: 10px;
       }
+    
+    nav img {
+      width: 170px;
+    }
   }

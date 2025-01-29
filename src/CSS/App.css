@@ -65,21 +65,34 @@ footer {
 }
 
 @media (max-width: 480px) {
-  .App {
-    grid-template-columns: 1fr; /* Single column layout */
-  }
+    .App {
+        grid-template-columns: 100%; /* Single column layout */
+        max-width: 100%; /* Prevents the grid from exceeding the screen */
+        overflow-x: hidden; /* Hides horizontal overflow */
+    }
 
-  nav {
-    grid-column: 1 / span 1; /* Full-width header */
-  }
+    nav {
+        grid-column: 1 / span 1; /* Full-width for navigation */
+        padding: 10px;
+        text-align: center;
+    }
 
-  header {
-    grid-column: 0 / span 1; /* Full-width header */
-  }
+    header {
+        grid-column: 1 / span 1; /* Full-width header */
+        max-width: 100%; /* Prevents overflow beyond viewport */
+        overflow-x: hidden; /* Hides any content spilling outside */
+        padding: 10px;
+    }
 
-  main {
-    grid-column: 0 / span 1; /* Full-width main content */
-  }
+    main {
+        grid-column: 1 / span 1; /* Full-width for content */
+        padding: 10px;
+    }
+
+    footer {
+        grid-column: 1 / span 1; /* Full-width footer */
+        padding: 10px;
+    }
 }
 
 
@@ -100,7 +113,7 @@ h2 {
   font-size: 40pt;
   font-weight: 350;
   color: #ffffff;
-  margin-top: 0;
+  margin-bottom: 10px;
 }
 
 /* SECTION TITLE! */

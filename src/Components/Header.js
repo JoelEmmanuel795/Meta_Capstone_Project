@@ -7,7 +7,7 @@ function Header(props) {
             <div className="container-header-text">
                 <h1>Little Lemon</h1>
                 <h2>Chicago</h2>
-                <h4 style={{color: 'white'}}><br/>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</h4>
+                <h4 style={{ color: 'white' }}>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</h4>
                 <div className="button-container">
                     <button>Reserve a Table</button>
                 </div>
