@@ -1,4 +1,61 @@
 header {
-    margin-top: 0; /* Remove gap above header */
     background-color: #495E57;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /* 12 equal columns */
+    margin: 0; /* Remove gap above header */
+    position: relative;
+}
+
+.container-header-text {
+    grid-column: 3 / span 4; /* Centers the text */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #FFFFFF; /* Ensure text is readable */
+    padding: 40px 100px 70px 0px;
+}
+
+.container-header-img {
+    grid-column: 7 / span 4; /* Center header (columns 3-10 out of 12) */
+    display: flex;
+    justify-content: flex-end;
+    position: relative
+}
+
+.container-header-img img {
+    position: absolute; /* Allow the image to move outside the container */
+    top: 20px; /* Adjust the image upward */
+    width: 500px; /* Set image width */
+    border-radius: 16px; /* Add rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow for emphasis */
+}
+
+.container-header-text .button-container {
+    display: flex;
+    justify-content: flex-start; /* Align button to the left */
+    margin-top: 40px; /* Add spacing above the button */
+}
+
+.container-header-text button {
+    display: inline-flex; /* Allows better control of alignment */
+    align-items: center; /* Vertically center text inside the button */
+    justify-content: center; /* Horizontally center the text */
+    background-color: #F4CE14; /* Yellow background */
+    font-family: 'Karla', sans-serif;
+    color: #000000; /* Black text */
+    font-size: 22px;
+    font-weight: bold;
+    border: none;
+    border-radius: 16px; /* Rounded corners */
+    padding: 12px 24px; /* Adjust size for better fit */
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+    transition: all 0.3s ease; /* Smooth hover transition */
+    text-align: center; /* Center text */
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+.container-header-text button:hover {
+    background-color: #D4B210; /* Darker yellow on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow */
 }

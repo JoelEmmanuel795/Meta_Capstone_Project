@@ -31,7 +31,6 @@ nav {
 header {
   grid-area: header;
   grid-column: 1 / span 12; /* Center header (columns 3-10 out of 12) */
-  text-align: center;
 }
 
 /* Main Content */
@@ -91,15 +90,17 @@ h1 {
   font-family: 'Markazi Text', serif;
   font-size: 64pt;
   font-weight: 500;
-  color: #333;
+  color: #F4CE14;
+  margin-bottom: -32px;
 }
 
 /* Sub title */
 h2 {
   font-family: 'Markazi Text', serif;
   font-size: 40pt;
-  font-weight: 700;
-  color: #333;
+  font-weight: 350;
+  color: #ffffff;
+  margin-top: 0;
 }
 
 /* SECTION TITLE! */

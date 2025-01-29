@@ -11,7 +11,7 @@ function App() {
       <Head/>
       <div className="App">
         <Nav/>
-        <Header><h1>Just some body text</h1></Header>
+        <Header/>
         <Main><h2>Heyooo</h2><p>Yoohooo</p></Main>
         <Footer/>
       </div>
