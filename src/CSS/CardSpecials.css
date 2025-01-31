@@ -1,0 +1,83 @@
+.card-specials {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #EDEFEE;
+  border-radius: 16px; /* More rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: left;
+  width: 100%;
+  max-width: 270px;
+}
+
+.card-image {
+  width: 100%;
+  height: 180px; /* Adjusted height for proportions */
+  object-fit: cover;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column; /* Stack content */
+  flex: 1; /* Stretch to fill the remaining space */
+  padding: 16px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between; /* Places title and price on the same line */
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+
+.card-price {
+  font-family: 'Karla', sans-serif;
+  font-size: 18pt;
+  font-weight: 600; /* Medium */
+  font-size: 18px;
+  color: #f19a48;
+  margin: 0; /* Remove default margin */
+}
+
+.card-description {
+  font-family: 'Karla', sans-serif;
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 16px; /* Added spacing below description */
+}
+
+.card-footer {
+  display: flex;
+  justify-content: flex-start; /* Aligns button to the left */
+  margin-top: auto;
+}
+
+.order-button {
+  display: inline-flex; /* Align icon and text horizontally */
+  align-items: center;
+  justify-content: center;
+  color: #000; /* Black text */
+  font-family: 'Karla', sans-serif;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.order-button:hover {
+  background-color: #d4b210; /* Slightly darker yellow on hover */
+  transform: translateY(-2px); /* Subtle lift effect on hover */
+}
+
+.order-icon {
+  margin-left: 8px; /* Space between text and icon */
+  font-size: 16px; /* Adjust icon size */
+  line-height: 0; /* Align icon vertically */
+}
