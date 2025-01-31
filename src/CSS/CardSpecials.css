@@ -43,7 +43,7 @@
 
 .card-description {
   font-family: 'Karla', sans-serif;
-  font-size: 14px;
+  font-size: 14pt;
   color: #555;
   line-height: 1.5;
   margin-bottom: 16px; /* Added spacing below description */
@@ -64,7 +64,7 @@
   border: none;
   border-radius: 8px;
   padding: 10px 20px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   cursor: pointer;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
@@ -80,4 +80,18 @@
   margin-left: 8px; /* Space between text and icon */
   font-size: 16px; /* Adjust icon size */
   line-height: 0; /* Align icon vertically */
+}
+
+
+@media (max-width: 480px) {
+  .card-specials {
+  }
+
+  .order-button {
+    display: inline-flex; /* Align icon and text horizontally */
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    padding: 8px 16px;
+  }
 }
