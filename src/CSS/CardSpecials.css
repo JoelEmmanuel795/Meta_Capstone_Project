@@ -8,7 +8,7 @@
   overflow: hidden;
   text-align: left;
   width: 100%;
-  max-width: 270px;
+  max-width: 280px;
 }
 
 .card-image {
@@ -84,9 +84,6 @@
 
 
 @media (max-width: 480px) {
-  .card-specials {
-  }
-
   .order-button {
     display: inline-flex; /* Align icon and text horizontally */
     align-items: center;

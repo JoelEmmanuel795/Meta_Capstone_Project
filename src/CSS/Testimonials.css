@@ -1,0 +1,106 @@
+.testimonials-section {
+  padding: 100px 20px;
+  background-color: #495E57; /* Light gray background */
+  text-align: center;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* 12 equal columns */
+  grid-template-rows: auto auto; /* Rows for header, main, and footer */
+  grid-template-areas: 
+    "header header header header header header header header header header header header"
+    "cards cards cards cards cards cards cards cards cards cards cards cards"
+}
+
+
+.testimonials-title {
+  grid-area: header;
+  grid-column: 3 / span 8;
+  font-family: 'Markazi Text', serif;
+  font-size: 28pt;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 50px;
+  justify-content: space-between;
+}
+
+.testimonials-cards {
+  grid-area: cards;
+  grid-column: 3 / span 8;
+  display: flex;
+  gap: 20px; /* Space between cards */
+  justify-items: center;
+}
+
+@media (min-width: 1500px) {
+  .testimonials-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 20px; /* Space between cards */
+  justify-items: center;
+  }
+}
+
+@media (max-width: 1256px) {
+  .specials-section {
+    margin: 100px 0 20px 0;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(10, 1fr); /* 12 equal columns */
+    grid-template-rows: auto auto; /* Rows for header, main, and footer */
+    grid-template-areas: 
+      "header header header header header header header header header header"
+      "cards cards cards cards cards cards cards cards cards cards"
+    ;
+  }
+
+  .testimonials-title {
+    grid-area: header;
+    grid-column: 2 / span 8;
+  }
+
+  .testimonials-cards {
+    grid-area: cards;
+    grid-column: 2 / span 8;
+  }
+}
+
+@media (max-width: 1024px) {
+  .testimonials-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonials-cards {
+      grid-column: 1 / span 10;
+      margin: 0 20pt;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonials-grid {
+    grid-template-columns: 20px 360px 20px; /* 12 equal columns */
+    grid-template-rows: auto auto; /* Rows for header, main, and footer */
+    grid-template-areas:
+      "header header header"
+      "cards cards cards"
+    ;
+  }
+
+  .testimonials-title {
+    grid-area: header;
+    grid-column: 2;
+    justify-content: center;
+  }
+
+  .testimonials-cards {
+    grid-area: cards;
+    flex-direction: column;
+    align-items: center;
+  }
+}

@@ -11,7 +11,7 @@ header {
     display: flex;
     flex-direction: column;
     color: #FFFFFF; /* Ensure text is readable */
-    padding: 10px 20px 20px 0px;
+    padding: 20px 20px 20px 0px;
     gap: 0;
 }
 
@@ -24,7 +24,7 @@ header {
 
 .container-header-img img {
     position: absolute; /* Allow the image to move outside the container */
-    top: 50px; /* Adjust the image upward */
+    top: 60px; /* Adjust the image upward */
     width: 380px; /* Set image width */
     border-radius: 16px; /* Add rounded corners */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow for emphasis */

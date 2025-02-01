@@ -17,6 +17,7 @@
     "nav nav nav nav nav nav nav nav nav nav nav nav "
     "header header header header header header header header header header header header"
     "specials specials specials specials specials specials specials specials specials specials specials specials"
+    "testimonials testimonials testimonials testimonials testimonials testimonials testimonials testimonials testimonials testimonials testimonials testimonials "
     "main main main main main main main main main main main main"
     "footer footer footer footer footer footer footer footer footer footer footer footer";
   column-gap: 16px;
@@ -36,6 +37,11 @@ header {
 
 .specials-section {
   grid-area: specials;
+  grid-column: 1 / span 12; /* Center header (columns 3-10 out of 12) */
+}
+
+.testimonials-section {
+  grid-area: testimonials;
   grid-column: 1 / span 12; /* Center header (columns 3-10 out of 12) */
 }
 

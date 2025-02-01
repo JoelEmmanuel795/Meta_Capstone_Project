@@ -1,0 +1,45 @@
+.testimonial-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  max-width: 200px;
+}
+
+.testimonial-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.testimonial-name {
+  font-family: 'Karla', sans-serif;
+  font-size: 16pt;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.testimonial-rating {
+  font-family: 'Karla', sans-serif;
+  font-size: 14pt;
+  color: #f4ce14; /* Yellow for stars */
+  margin-bottom: 8px;
+}
+
+.testimonial-review {
+  font-family: 'Karla', sans-serif;
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+  .testimonial-card {
+    max-width:180px;
+  }
+}
