@@ -1,7 +1,6 @@
 .testimonials-section {
-  padding: 100px 20px;
+  padding: 80px 20px;
   background-color: #495E57; /* Light gray background */
-  text-align: center;
 }
 
 .testimonials-grid {
@@ -23,6 +22,7 @@
   color: #ffffff;
   margin-bottom: 50px;
   justify-content: space-between;
+  text-align: center;
 }
 
 .testimonials-cards {

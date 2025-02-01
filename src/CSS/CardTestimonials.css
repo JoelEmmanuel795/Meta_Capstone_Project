@@ -1,11 +1,26 @@
 .testimonial-card {
+  display: flex;
+  flex-direction: column;
   background: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  text-align: center;
   width: 100%;
   max-width: 200px;
+  align-items: flex-start;
+}
+
+.testimonial-flex {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.testimonial-rating {
+  font-family: 'Karla', sans-serif;
+  font-size: 14pt;
+  color: #f4ce14; /* Yellow for stars */
+  margin-bottom: 12px;
 }
 
 .testimonial-image {
@@ -14,6 +29,7 @@
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 15px;
+  padding-right: 10px;
 }
 
 .testimonial-name {
@@ -22,13 +38,6 @@
   font-weight: 700;
   margin-bottom: 8px;
   color: #333;
-}
-
-.testimonial-rating {
-  font-family: 'Karla', sans-serif;
-  font-size: 14pt;
-  color: #f4ce14; /* Yellow for stars */
-  margin-bottom: 8px;
 }
 
 .testimonial-review {
