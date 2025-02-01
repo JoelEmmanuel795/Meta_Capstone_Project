@@ -10,6 +10,7 @@
   grid-template-areas: 
     "header header header header header header header header header header header header"
     "cards cards cards cards cards cards cards cards cards cards cards cards"
+  ;
 }
 
 
@@ -84,23 +85,9 @@
 
 @media (max-width: 480px) {
   .testimonials-grid {
-    grid-template-columns: 20px 360px 20px; /* 12 equal columns */
-    grid-template-rows: auto auto; /* Rows for header, main, and footer */
-    grid-template-areas:
-      "header header header"
-      "cards cards cards"
-    ;
-  }
-
-  .testimonials-title {
-    grid-area: header;
-    grid-column: 2;
-    justify-content: center;
-  }
-
-  .testimonials-cards {
-    grid-area: cards;
+    display: flex;
     flex-direction: column;
+    width: 100vw;
     align-items: center;
   }
 }
