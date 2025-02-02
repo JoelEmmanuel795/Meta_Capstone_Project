@@ -12,7 +12,7 @@
 .App {
   display: grid;
   grid-template-columns: repeat(12, 1fr); /* 12 equal columns */
-  grid-template-rows: auto auto auto 1fr auto; /* Rows for header, main, and footer */
+  grid-template-rows: auto auto auto auto auto; /* Rows for header, main, and footer */
   grid-template-areas:
     "nav nav nav nav nav nav nav nav nav nav nav nav "
     "header header header header header header header header header header header header"
@@ -26,13 +26,14 @@
 /* Nav Section */
 nav {
   grid-area: nav;
-  grid-column: 3 / span 8; /* Center header (columns 3-10 out of 12) */
+  grid-column: 3 / span 10; /* Center header (columns 3-10 out of 12) */
 }
 
 /* Header Section */
 header {
   grid-area: header;
   grid-column: 1 / span 12; /* Center header (columns 3-10 out of 12) */
+  padding-top: 100px; /* Adjust based on the height of the nav */
 }
 
 .specials-section {
@@ -48,7 +49,7 @@ header {
 /* Main Content */
 main {
   grid-area: main;
-  grid-column: 3 / span 8; /* Content spans columns 2-11 */
+  grid-column: 1 / span 12; /* Content spans columns 2-11 */
 }
 
 /* Footer Section */
@@ -69,16 +70,17 @@ footer {
 
   header {
     grid-column: 0 / span 10; /* Center header (columns 2-9 out of 10) */
+    padding-top: 230px; /* Adjust based on the height of the nav */
   }
 
   main {
-    grid-column: 1 / span 10; /* Full-width for smaller screens */
+    grid-template-columns: 1 / span 12; /* Adjust grid to 10 columns */
   }
 }
 
 @media (max-width: 480px) {
     .App {
-        grid-template-columns: 100%; /* Single column layout */
+        grid-template-columns: 100vw; /* Single column layout */
         max-width: 100%; /* Prevents the grid from exceeding the screen */
         overflow-x: hidden; /* Hides horizontal overflow */
     }
@@ -93,17 +95,15 @@ footer {
         grid-column: 1 / span 1; /* Full-width header */
         max-width: 100%; /* Prevents overflow beyond viewport */
         overflow-x: hidden; /* Hides any content spilling outside */
-        padding: 10px;
-    }
-
-    main {
-        grid-column: 1 / span 1; /* Full-width for content */
-        padding: 10px;
+        padding: 230px 10px 10px 10px;
     }
 
     footer {
         grid-column: 1 / span 1; /* Full-width footer */
-        padding: 10px;
+    }
+
+    main {
+      grid-column: 1 / span 1;
     }
 }
 

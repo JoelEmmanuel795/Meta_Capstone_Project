@@ -1,8 +1,12 @@
 footer {
+    background-color: #797979;
+}
+
+.container-footer {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding: 20px;
+    padding: 20px 0;
     background-color: #797979;
     color: #fff;
     gap: 40px;
@@ -15,7 +19,6 @@ footer div {
 
 @media (max-width: 768px) { /* Stack footer sections */
     footer {
-        flex-direction: column;
         text-align: center;
     }
 
