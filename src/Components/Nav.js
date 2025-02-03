@@ -35,7 +35,7 @@ function Nav(props) {
           <div className="inner-flex">
             <img src={logo} width={200} alt="Little Lemon Logo"></img>
             <ul>
-                <li><a href="https://github.com/JoelEmmanuel795/Meta_Capstone_Project">Home</a></li>
+                <li><Link to="/" className="nav-item">Home</Link></li>
                 <li><a key="about-section" href="#about" onClick={handleClick("about")}>About</a></li>
                 <li><a href="https://github.com/JoelEmmanuel795/Meta_Capstone_Project">Menu</a></li>
                 <li><Link to="/reservations" className="nav-item">Reservations</Link></li>

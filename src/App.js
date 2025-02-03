@@ -6,6 +6,7 @@ import Footer from './Components/Footer';
 import Head from './Components/Head';
 import SpecialsSection from './Components/SpecialsSection';
 import Testimonials from './Components/Testimonials';
+import BookingPage from './Components/BookingPage';
 import {Routes, Route} from 'react-router-dom';
 
 function App() {
@@ -20,7 +21,14 @@ function App() {
         <Main/>
         <Footer/>
         <Routes>
-          <Route path="/reservations"/>
+          <Route
+            path="/reservations"
+            element={<BookingPage/>}
+          />
+          <Route
+            path="/"
+            element={<App/>}
+          />
         </Routes>
       </div>
     </>
