@@ -1,29 +1,8 @@
-.App {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr); /* 12 equal columns */
-    grid-template-rows: auto auto auto auto auto; /* Rows for header, main, and footer */
-    grid-template-areas:
-      "nav nav nav nav nav nav nav nav nav nav nav nav "
-      "header header header header header header header header header header header header"
-      "footer footer footer footer footer footer footer footer footer footer footer footer";
-    column-gap: 16px;
-  }
-
-/* Nav Section */
-nav {
-    grid-area: nav;
-    grid-column: 3 / span 10; /* Center header (columns 3-10 out of 12) */
-  }
-
-/* Header Section */
-header {
-    grid-area: header;
-    grid-column: 1 / span 12; /* Center header (columns 3-10 out of 12) */
-    padding-top: 100px; /* Adjust based on the height of the nav */
+.container-booking {
+    grid-column: 3 / span 8; /* Centers the text */
+    display: flex;
+    flex-direction: column;
+    color: #FFFFFF; /* Ensure text is readable */
+    padding: 20px 20px 20px 0px;
+    gap: 0;
 }
-
-/* Footer Section */
-footer {
-    grid-area: footer;
-    grid-column: 1 / span 12; /* Full width for the footer */
-  }

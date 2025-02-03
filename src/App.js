@@ -1,25 +1,18 @@
 import './CSS/App.css';
-import Header from './Components/Header';
+import Home from './Components/Home';
 import Nav from './Components/Nav';
-import Main from './Components/Main';
-import Footer from './Components/Footer';
 import Head from './Components/Head';
-import SpecialsSection from './Components/SpecialsSection';
-import Testimonials from './Components/Testimonials';
 import BookingPage from './Components/BookingPage';
 import {Routes, Route} from 'react-router-dom';
 
 function App() {
+  
+  
   return (
     <>
       <Head/>
       <div className="App">
         <Nav/>
-        <Header/>
-        <SpecialsSection/>
-        <Testimonials/>
-        <Main/>
-        <Footer/>
         <Routes>
           <Route
             path="/reservations"
@@ -27,7 +20,7 @@ function App() {
           />
           <Route
             path="/"
-            element={<App/>}
+            element={<Home/>}
           />
         </Routes>
       </div>

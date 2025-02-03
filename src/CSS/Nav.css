@@ -24,7 +24,7 @@ div .inner-flex {
 }
 
 .nav.hidden {
-    top: -100px; /* Moves nav out of view */
+    top: -120px; /* Moves nav out of view */
 }
 
 .nav.visible {
@@ -73,6 +73,10 @@ div .inner-flex {
       flex-direction: column; /* Stack links vertically */
       align-items: center;
       gap: 10px;
+    }
+
+    .nav.hidden {
+      top: -210px; /* Moves nav out of view */
     }
   }
 

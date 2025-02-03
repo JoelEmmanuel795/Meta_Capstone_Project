@@ -1,17 +1,21 @@
 import '../CSS/BookingPage.css'
-import Nav from './Nav';
-import Header from './Header';
+import '../CSS/Main.css'
+import BookingForm from './BookingForm';
 import Footer from './Footer';
 
 function BookingPage() {
 
     return (
         <>
-            <Nav/>
-            <Header/>
+            <header>
+                <div className="container-booking">
+                    <BookingForm/>
+                </div>
+            </header>
             <Footer/>
         </>
     );
 };
 
 export default BookingPage;
+

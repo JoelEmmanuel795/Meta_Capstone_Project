@@ -4,7 +4,6 @@
   padding: 0;
 }
 
-
 /* Import Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700;800&family=Markazi+Text:wght@400;700&display=swap');
 
@@ -12,7 +11,7 @@
 .App {
   display: grid;
   grid-template-columns: repeat(12, 1fr); /* 12 equal columns */
-  grid-template-rows: auto auto auto auto auto; /* Rows for header, main, and footer */
+  grid-template-rows: auto auto auto auto auto auto; /* Rows for header, main, and footer */
   grid-template-areas:
     "nav nav nav nav nav nav nav nav nav nav nav nav "
     "header header header header header header header header header header header header"
@@ -176,4 +175,3 @@ p {
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
