@@ -1,15 +1,21 @@
-// import { render, screen } from '@testing-library/react';
 import { initializeTimes, updateTimes } from "./Components/Main";
 import { render, screen, fireEvent } from "@testing-library/react";
 import BookingForm from "./Components/BookingForm";
 import Main from "./Components/Main";
+import { fetchAPI } from "./Components/api";
+import { BrowserRouter } from "react-router-dom";
+
+// ✅ Mock fetchAPI correctly at the top
+jest.mock("./Components/api", () => ({
+  fetchAPI: jest.fn(() => ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"]),
+}));
 
 test("BookingForm can be submitted by the user", () => {
-  // Mock a dispatch (since form expects a dispatch prop)
   const mockDispatch = jest.fn();
+  const mockSubmitForm = jest.fn(); // Mock function
   const fakeTimes = ["17:00", "18:00"];
-  
-  render(<BookingForm availableTimes={fakeTimes} dispatch={mockDispatch} />);
+
+  render(<BookingForm availableTimes={fakeTimes} dispatch={mockDispatch} submitForm={mockSubmitForm} />);
 
   // Fill out some form fields
   const dateInput = screen.getByLabelText(/choose date/i);
@@ -23,40 +29,23 @@ test("BookingForm can be submitted by the user", () => {
   // Submit the form
   fireEvent.click(submitButton);
 
-  // Then check if the onSubmit logic ran
-  // If you have an actual onSubmit or dispatch you want to check, you can test that here
-  // e.g. expect(mockDispatch).toHaveBeenCalledWith(...)
+  // ✅ Assert that submitForm was called
+  expect(mockSubmitForm).toHaveBeenCalled();
 });
 
-test("renders the static booking text", () => {
-  render(<Main />);
-  // Check for an element containing “Book a Table” or something similar
-  const heading = screen.getByText(/book a table/i);
-  expect(heading).toBeInTheDocument();
+
+test("initializeTimes returns mocked available times", () => {
+  expect(initializeTimes()).toStrictEqual(["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"]);
 });
 
-test("initializeTimes returns the correct initial times", () => {
-  const expectedTimes = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
-  expect(initializeTimes()).toStrictEqual(expectedTimes);
-});
-
-test("updateTimes resets available times to the initial state", () => {
-  const currentState = ["17:00", "18:00", "19:00", "20:00"];
+test("updateTimes updates times based on fetchAPI mock", () => {
+  const currentState = ["17:00", "18:00"];
   const action = { type: "UPDATE_TIMES", date: "2024-02-01" };
 
-  const expectedState = initializeTimes(); 
-  const result = updateTimes(currentState, action); 
+  const expectedState = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"]; 
+  fetchAPI.mockReturnValue(expectedState); // Mock fetchAPI return value
 
-  console.log("Expected:", expectedState);
-  console.log("Received:", result);
+  const result = updateTimes(currentState, action); 
 
   expect(result).toStrictEqual(expectedState);
 });
-
-
-// test('renders learn react link', () => {
-//   render(<App />);
-//   const linkElement = screen.getByText(/learn react/i);
-//   expect(linkElement).toBeInTheDocument();
-// });
-

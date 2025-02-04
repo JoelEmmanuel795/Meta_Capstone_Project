@@ -3,12 +3,10 @@ import Home from './Components/Home';
 import Nav from './Components/Nav';
 import Head from './Components/Head';
 import BookingPage from './Components/BookingPage';
-import Main from './Components/Main'
 import {Routes, Route} from 'react-router-dom';
+import ConfirmedBooking from './Components/ConfirmedBooking';
 
 function App() {
-  
-  
   return (
     <>
       <Head/>
@@ -22,6 +20,10 @@ function App() {
           <Route
             path="/"
             element={<Home/>}
+          />
+          <Route
+            path="/booking-confirmed"
+            element={<ConfirmedBooking/>}
           />
         </Routes>
       </div>
