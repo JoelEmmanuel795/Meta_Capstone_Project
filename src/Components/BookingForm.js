@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../CSS/BookingForm.css";
 
 function BookingForm({ availableTimes, dispatch, submitForm }) {
@@ -6,6 +6,20 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
   const [guests, setGuests] = useState("");
   const [occasion, setOccasion] = useState("");
   const [reservationDate, setReservationDate] = useState("");
+  const [isValid, setIsValid] = useState(false); 
+
+  const getTodayDate = () => {
+    const today = new Date();
+    return today.toISOString().split("T")[0];
+  };
+
+  useEffect(() => {
+    const isDateValid = reservationDate >= getTodayDate();
+    const isGuestsValid = guests >= 1 && guests <= 10;
+    const isFormValid = reservationDate && isDateValid && isGuestsValid && selectedTime && occasion;
+    
+    setIsValid(isFormValid); // ✅ Enable/Disable submit button
+  }, [reservationDate, guests, selectedTime, occasion]);
 
   const handleDateChange = (event) => {
     const newDate = event.target.value;
@@ -34,6 +48,8 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         type="date"
         id="res-date"
         aria-label="Choose a reservation date"
+        min={getTodayDate()}
+        value={reservationDate}
         onChange={handleDateChange}
       />
 
@@ -72,12 +88,14 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
       >
         <option>Birthday</option>
         <option>Anniversary</option>
+        <option>Other</option>
       </select>
 
       <input
         type="submit"
         value="Make Your reservation"
         aria-label="Confirm your reservation"
+        disabled={!isValid}
       />
     </form>
   );

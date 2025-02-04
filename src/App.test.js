@@ -33,7 +33,6 @@ test("BookingForm can be submitted by the user", () => {
   expect(mockSubmitForm).toHaveBeenCalled();
 });
 
-
 test("initializeTimes returns mocked available times", () => {
   expect(initializeTimes()).toStrictEqual(["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"]);
 });
