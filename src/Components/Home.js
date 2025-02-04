@@ -1,6 +1,6 @@
 import '../CSS/Home.css';
 import Header from './Header';
-import Main from './Main';
+import About from './About';
 import Footer from './Footer';
 import SpecialsSection from './SpecialsSection';
 import Testimonials from './Testimonials';
@@ -11,7 +11,7 @@ function Home() {
         <Header/>
         <SpecialsSection/>
         <Testimonials/>
-        <Main/>
+        <About/>
         <Footer/>
     </>
   );

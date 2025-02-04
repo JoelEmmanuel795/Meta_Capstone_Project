@@ -29,7 +29,7 @@ nav {
 }
 
 /* Header Section */
-header {
+header, main {
   grid-area: header;
   grid-column: 1 / span 12; /* Center header (columns 3-10 out of 12) */
   padding-top: 100px; /* Adjust based on the height of the nav */
@@ -46,7 +46,7 @@ header {
 }
 
 /* Main Content */
-main {
+#about-section {
   grid-area: main;
   grid-column: 1 / span 12; /* Content spans columns 2-11 */
 }
@@ -67,12 +67,12 @@ footer {
     grid-column: 1 / span 1; /* Full-width header */
   }
 
-  header {
+  header, main {
     grid-column: 0 / span 10; /* Center header (columns 2-9 out of 10) */
     padding-top: 230px; /* Adjust based on the height of the nav */
   }
 
-  main {
+  #about-section {
     grid-template-columns: 1 / span 12; /* Adjust grid to 10 columns */
   }
 }
@@ -90,7 +90,7 @@ footer {
         text-align: center;
     }
 
-    header {
+    header, main {
         grid-column: 1 / span 1; /* Full-width header */
         max-width: 100%; /* Prevents overflow beyond viewport */
         overflow-x: hidden; /* Hides any content spilling outside */
@@ -101,7 +101,7 @@ footer {
         grid-column: 1 / span 1; /* Full-width footer */
     }
 
-    main {
+    #about-section {
       grid-column: 1 / span 1;
     }
 }

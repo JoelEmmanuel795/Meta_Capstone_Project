@@ -1,24 +1,32 @@
-import '../CSS/Main.css'
-import restaurant from '../Content/restaurant.jpg'
-import Mario_and_Adrian from '../Content/Mario_and_Adrian.jpg'
+import React, { useReducer } from "react";
+import BookingForm from "./BookingForm";
 
-function Main(props) {
+  const initializeTimes = () => {
+    return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"]; // Ensure this is always an array
+  };
+  
+  const updateTimes = (state, action) => {
+    switch (action.type) {
+      case "UPDATE_TIMES":
+        return [...initializeTimes()]; // Spread into a new array to prevent mutation issues
+      default:
+        return state;
+    }
+  };
+
+function Main() {
+    const [availableTimes, dispatch] = useReducer(updateTimes, [], initializeTimes); 
+
     return (
-        <main id="about-section">
-            <div className='main'>
-                <div className="main-text">
-                    <h1>Little Lemon</h1>
-                    <h2>Chicago</h2>
-                    <p>Based in Chicago, Illinois, Little Lemon is a family-owned Mediterranean restaurant, focused on traditional recipes served with a modern twist. The chefs draw inspiration from Italian, Greek, and Turkish culture and have a menu of 12–15 items that they rotate seasonally. The restaurant has a rustic and relaxed atmosphere with moderate prices, making it a popular place for a meal any time of the day.</p>
-                </div>
-                <div className="main-images">
-                    <img src={Mario_and_Adrian} className="main-image main-image1" alt="Mario and Adrian smiling in the kitchen"/>
-                    <img src={restaurant} className="main-image main-image2" alt="The Little Lemon restaurant's interior"/>
-                </div>
-                {props.children}
+        <main>
+            <div  className="container-booking">
+                <h1>Book a Table</h1>
+                <BookingForm availableTimes={availableTimes} dispatch={dispatch}/>
             </div>
         </main>
     )
 }
 
-export default Main
+export default Main;
+
+export { initializeTimes, updateTimes };

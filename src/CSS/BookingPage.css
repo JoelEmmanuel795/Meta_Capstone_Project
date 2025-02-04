@@ -1,3 +1,11 @@
+main {
+    background-color: #495E57;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /* 12 equal columns */
+    margin: 0; /* Remove gap above header */
+    position: relative;
+}
+
 .container-booking {
     grid-column: 3 / span 8; /* Centers the text */
     display: flex;
@@ -5,4 +13,51 @@
     color: #FFFFFF; /* Ensure text is readable */
     padding: 20px 20px 20px 0px;
     gap: 0;
+}
+
+.container-booking h1 {
+    margin-bottom: 20px;
+}
+
+
+/* Tablets: Adjust grid and padding for medium screens */
+@media (max-width: 1256px) {
+    main {
+        grid-template-columns: repeat(10, 1fr); /* Adjust grid to 10 columns */
+    }
+
+    .container-booking {
+        grid-column: 2 / span 8; /* Center text more tightly */
+    }
+}
+
+/* Mobile: Stack content vertically */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr; /* Single-column layout */
+        grid-template-rows: auto; /* Stack rows */
+        text-align: center;
+    }
+
+    .container-booking {
+        grid-column: 1 / span 1; /* Full width */
+        padding: 20px; /* Add padding for smaller screens */
+        text-align: center;
+    }
+}
+
+/* Adjust typography and container alignment for small screens */
+@media (max-width: 480px) {
+    main {
+        grid-template-columns: 1fr; /* Single-column layout */
+        grid-template-rows: auto auto; /* Stack rows */
+    }
+
+    .container-booking {
+        grid-column: 1 / span 1; /* Full width */
+        padding: 10px; /* Add padding for smaller screens */
+        text-align: center;
+        flex-wrap: wrap; /* Ensure content wraps */
+        gap: 10px; /* Add spacing between text items */
+    }
 }
