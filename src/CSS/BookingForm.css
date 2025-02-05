@@ -1,5 +1,6 @@
 .booking-form {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     max-width: 200px;
     gap: 20px;
   }

@@ -1,101 +1,138 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { useFormik } from "formik";
+import * as Yup from "yup"; // ✅ Import Yup for validation
 import "../CSS/BookingForm.css";
 
 function BookingForm({ availableTimes, dispatch, submitForm }) {
-  const [selectedTime, setSelectedTime] = useState("17:00");
-  const [guests, setGuests] = useState("");
-  const [occasion, setOccasion] = useState("");
-  const [reservationDate, setReservationDate] = useState("");
-  const [isValid, setIsValid] = useState(false); 
+  const [filteredTimes, setFilteredTimes] = useState(availableTimes); // ✅ Stores valid times
 
-  const getTodayDate = () => {
-    const today = new Date();
-    return today.toISOString().split("T")[0];
-  };
+  // ✅ Function to get today's date in YYYY-MM-DD format
+  const getTodayDate = () => new Date().toISOString().split("T")[0];
 
+  // ✅ Formik Setup
+  const formik = useFormik({
+    initialValues: {
+      reservationDate: "",
+      selectedTime: "",
+      guests: "",
+      occasion: "",
+    },
+    validationSchema: Yup.object({
+      reservationDate: Yup.string()
+        .required("Date is required")
+        .test("is-future-date", "Date must be today or later", (value) => {
+          return value && value >= getTodayDate();
+        }),
+      selectedTime: Yup.string().required("Please select a time"),
+      guests: Yup.number()
+        .required("Number of guests is required")
+        .min(1, "At least 1 guest required")
+        .max(10, "Maximum 10 guests allowed"),
+      occasion: Yup.string().required("Please select an occasion"),
+    }),
+    onSubmit: (values) => {
+      submitForm(values); // ✅ Uses submitForm from props
+    },
+  });
+
+  // ✅ Call dispatch when the user selects a date to fetch new times
   useEffect(() => {
-    const isDateValid = reservationDate >= getTodayDate();
-    const isGuestsValid = guests >= 1 && guests <= 10;
-    const isFormValid = reservationDate && isDateValid && isGuestsValid && selectedTime && occasion;
-    
-    setIsValid(isFormValid); // ✅ Enable/Disable submit button
-  }, [reservationDate, guests, selectedTime, occasion]);
+    if (formik.values.reservationDate) {
+      dispatch({ type: "UPDATE_TIMES", date: formik.values.reservationDate });
+    }
+  }, [formik.values.reservationDate, dispatch]);
 
-  const handleDateChange = (event) => {
-    const newDate = event.target.value;
-    setReservationDate(newDate);
-    dispatch({ type: "UPDATE_TIMES", date: newDate });
-  };
+  // ✅ Filter times when today is selected (only allow future times)
+  useEffect(() => {
+    if (formik.values.reservationDate === getTodayDate()) {
+      const now = new Date();
+      const currentHour = now.getHours();
+      const currentMinute = now.getMinutes();
 
-  // Here is where we use `submitAPI`
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Gather any relevant form data into an object
-    const formData = {
-      time: selectedTime,
-      guests: guests,
-      occasion: occasion,
-      date: reservationDate,
-    };
+      const validTimes = availableTimes.filter((time) => {
+        const [hour, minute] = time.split(":").map(Number);
+        return hour > currentHour || (hour === currentHour && minute > currentMinute);
+      });
 
-    submitForm(formData);
-  };
+      setFilteredTimes(validTimes);
+    } else {
+      setFilteredTimes(availableTimes);
+    }
+  }, [formik.values.reservationDate, availableTimes]);
 
   return (
-    <form className="booking-form" onSubmit={handleSubmit}>
-      <label htmlFor="res-date">Choose date</label>
+    <form className="booking-form" onSubmit={formik.handleSubmit}>
+      {/* ✅ Date Field */}
+      <label htmlFor="reservation-date">Choose date</label>
       <input
         type="date"
-        id="res-date"
+        id="reservation-date"
         aria-label="Choose a reservation date"
-        min={getTodayDate()}
-        value={reservationDate}
-        onChange={handleDateChange}
+        min={getTodayDate()} // ✅ Prevent past dates
+        {...formik.getFieldProps("reservationDate")}
       />
+      {formik.touched.reservationDate && formik.errors.reservationDate ? (
+        <div className="error">{formik.errors.reservationDate}</div>
+      ) : null}
 
-      <label htmlFor="res-time">Choose time</label>
+      {/* ✅ Time Selection (Filtered for today) */}
+      <label htmlFor="reservation-time">Choose time</label>
       <select
-        id="res-time"
-        value={selectedTime}
+        id="reservation-time"
         aria-label="Select a reservation time"
-        onChange={(e) => setSelectedTime(e.target.value)}
+        {...formik.getFieldProps("selectedTime")}
       >
-        {availableTimes.map((time) => (
-          <option key={time} value={time}>
-            {time}
-          </option>
-        ))}
+        {filteredTimes.length > 0 ? (
+          filteredTimes.map((time) => (
+            <option key={time} value={time}>
+              {time}
+            </option>
+          ))
+        ) : (
+          <option disabled>No available times</option>
+        )}
       </select>
+      {formik.touched.selectedTime && formik.errors.selectedTime ? (
+        <div className="error">{formik.errors.selectedTime}</div>
+      ) : null}
 
+      {/* ✅ Number of Guests */}
       <label htmlFor="guests">Number of guests</label>
       <input
         type="number"
+        id="guests"
         placeholder="1"
         min="1"
         max="10"
-        id="guests"
-        value={guests}
         aria-label="Select a number of guests"
-        onChange={(e) => setGuests(e.target.value)}
+        {...formik.getFieldProps("guests")}
       />
+      {formik.touched.guests && formik.errors.guests ? (
+        <div className="error">{formik.errors.guests}</div>
+      ) : null}
 
+      {/* ✅ Occasion Selection */}
       <label htmlFor="occasion">Occasion</label>
       <select
         id="occasion"
-        value={occasion}
         aria-label="Select the occasion"
-        onChange={(e) => setOccasion(e.target.value)}
+        {...formik.getFieldProps("occasion")}
       >
+        <option value="">Select an Occasion</option>
         <option>Birthday</option>
         <option>Anniversary</option>
         <option>Other</option>
       </select>
+      {formik.touched.occasion && formik.errors.occasion ? (
+        <div className="error">{formik.errors.occasion}</div>
+      ) : null}
 
+      {/* ✅ Submit Button (Disabled if Form is Invalid) */}
       <input
         type="submit"
-        value="Make Your reservation"
+        value="Make Your Reservation"
         aria-label="Confirm your reservation"
-        disabled={!isValid}
+        disabled={!formik.isValid || !formik.dirty}
       />
     </form>
   );

@@ -45,12 +45,12 @@ function Nav(props) {
         <img src={logo} width={200} alt="Little Lemon Logo" />
         <ul>
           <li>
-            <Link to="/" className="nav-item" onClick={scrollToTop}>
+            <Link to="/" className="nav-item" onClick={scrollToTop} aria-label="Go to Homepage">
               Home
             </Link>
           </li>
           <li>
-            <a key="about-section" href="#about" onClick={handleClick("about")}>
+            <a key="about-section" href="#about" onClick={handleClick("about")} aria-label="Go to the About Section">
               About
             </a>
           </li>
@@ -60,17 +60,17 @@ function Nav(props) {
             </a>
           </li>
           <li>
-            <Link onClick={scrollToTop} to="/reservations" className="nav-item">
+            <Link onClick={scrollToTop} to="/reservations" className="nav-item" aria-label="Go to Reservations Section">
               Reservations
             </Link>
           </li>
           <li>
-            <a href="https://github.com/JoelEmmanuel795/Meta_Capstone_Project">
+            <a href="https://github.com/JoelEmmanuel795/Meta_Capstone_Project" aria-label="Order Online">
               Order Online
             </a>
           </li>
           <li>
-            <a href="https://github.com/JoelEmmanuel795/Meta_Capstone_Project">
+            <a href="https://github.com/JoelEmmanuel795/Meta_Capstone_Project" aria-label="Login">
               Login
             </a>
           </li>
