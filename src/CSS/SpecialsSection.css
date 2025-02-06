@@ -6,9 +6,9 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr); /* 12 equal columns */
   grid-template-rows: auto auto; /* Rows for header, main, and footer */
-  grid-template-areas:
+  grid-template-areas: 
     "header header header header header header header header header header header header"
-    "cards1 cards1 cards1 cards1 cards1 cards1 cards1 cards1 cards1 cards1 cards1 cards1"
+    "cards cards cards cards cards cards cards cards cards cards cards cards"
   ;
 }
 
@@ -22,6 +22,17 @@
 .specials-flex h2 {
   font-weight: bold;
 }
+
+.specials-cards {
+  margin: 30px 0 20px 0;
+  grid-area: cards;
+  grid-column: 3 / span 8;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal-width columns */
+  gap: 25px; /* Even spacing between rows and columns */
+  justify-items: center; /* Center the cards horizontally within their grid cells */
+}
+
 
 .view-menu-button {
   display: inline-flex; /* Allows better control of alignment */
@@ -47,16 +58,6 @@
   background-color: #d4b210;
 }
 
-#specials-cards {
-  margin: 30px 0 20px 0;
-  grid-area: cards1;
-  grid-column: 3 / span 8;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 equal-width columns */
-  gap: 25px; /* Even spacing between rows and columns */
-  justify-items: center; /* Center the cards horizontally within their grid cells */
-}
-
 /* Adjust grid and padding for medium screens */
 @media (max-width: 1256px) {
   .specials-section {
@@ -64,12 +65,11 @@
   }
 
   .specials-grid {
-    display: grid;
     grid-template-columns: repeat(10, 1fr); /* 12 equal columns */
     grid-template-rows: auto auto; /* Rows for header, main, and footer */
-    grid-template-areas:
+    grid-template-areas: 
       "header header header header header header header header header header"
-      "cards2 cards2 cards2 cards2 cards2 cards2 cards2 cards2 cards2 cards2"
+      "cards cards cards cards cards cards cards cards cards cards"
     ;
   }
 
@@ -78,15 +78,23 @@
     grid-column: 2 / span 8;
   }
 
-  .specials-grid #specials-cards {
+  .specials-cards {
     margin: 30px 0 20px 0;
-    grid-area: cards2;
+    grid-area: cards;
     grid-column: 2 / span 8;
   }
 }
 
 /* Adjust grid and padding for medium screens */
 @media (max-width: 800px) {
+  .specials-grid {
+    grid-template-columns: repeat(10, 1fr); /* 12 equal columns */
+    grid-template-rows: auto auto; /* Rows for header, main, and footer */
+    grid-template-areas:
+      "header header header header header header header header header header"
+      "cards cards cards cards cards cards cards cards cards cards"
+    ;
+  }
 
   .specials-flex {
     grid-area: header;
@@ -96,9 +104,10 @@
     flex-wrap: wrap;
   }
 
-  .specials-grid #specials-cards [class="specials-cards"] {
+  .specials-cards {
+    grid-template-columns: repeat(10, 1fr);
     margin: 30px 0 20px 0;
-    grid-area: cards2;
+    grid-area: cards;
     grid-column: 2 / span 8;
     display: flex;
     justify-content: space-between;
@@ -113,7 +122,7 @@
     grid-template-rows: auto auto; /* Rows for header, main, and footer */
     grid-template-areas:
       "header header header"
-      "cards3 cards3 cards3"
+      "cards cards cards"
     ;
   }
 
@@ -125,13 +134,13 @@
     justify-content: center;
   }
 
-  .specials-grid #specials-cards {
+  .specials-cards {
     margin: 30px 0 20px 0;
-    grid-area: cards3;
+    grid-area: cards;
     grid-column: 2;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; 
+    justify-content: center;
   }
 
   .specials-flex h2 {
