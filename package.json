@@ -14,12 +14,12 @@
     "web-vitals": "^4.2.4",
     "yup": "^1.6.1"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+"scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "jest",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "test": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -49,8 +49,9 @@
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^14.6.1",
     "babel-jest": "^29.7.0",
+    "customize-cra": "^1.0.0",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^27.5.1"
+    "jest": "^27.5.1",
+    "react-app-rewired": "^2.2.1"
   }
 }
- 
