@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://JoelEmmanuel795.github.io/Meta_Capstone_Project/",
+  "homepage": "https://JoelEmmanuel795.github.io/Meta_Capstone_Project",
   "dependencies": {
     "cra-template": "1.2.0",
     "formik": "^2.4.6",
@@ -18,7 +18,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -b master -d build",
     "test": "jest",
     "eject": "react-scripts eject"
   },
