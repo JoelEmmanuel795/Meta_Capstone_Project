@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/Meta_Capstone_Project/static/css/main.d6af6158.css",
+    "main.js": "/Meta_Capstone_Project/static/js/main.ea2f2ae4.js",
+    "static/js/488.9c92ff38.chunk.js": "/Meta_Capstone_Project/static/js/488.9c92ff38.chunk.js",
+    "static/media/header-img.jpg": "/Meta_Capstone_Project/static/media/header-img.1a27b4099b67004d1ae1.jpg",
+    "static/media/restaurant.jpg": "/Meta_Capstone_Project/static/media/restaurant.09e5e515be55e9d199df.jpg",
+    "static/media/Mario_and_Adrian.jpg": "/Meta_Capstone_Project/static/media/Mario_and_Adrian.d4cd8ce6c8567b4c337c.jpg",
+    "static/media/bruchetta.jpg": "/Meta_Capstone_Project/static/media/bruchetta.d54e450bda5efcf06010.jpg",
+    "static/media/greek_salad.jpg": "/Meta_Capstone_Project/static/media/greek_salad.7ad5e58282d329e9e25c.jpg",
+    "static/media/Logo.svg": "/Meta_Capstone_Project/static/media/Logo.6c132dfefa69396bba43f72aa595e62f.svg",
+    "static/media/logo_hor.png": "/Meta_Capstone_Project/static/media/logo_hor.d4cae6fac8384c2dae04.png",
+    "static/media/Customer3.jpg": "/Meta_Capstone_Project/static/media/Customer3.fb7568cd38df56db575f.jpg",
+    "static/media/Customer4.jpg": "/Meta_Capstone_Project/static/media/Customer4.b77f1db27ccb56a309c8.jpg",
+    "static/media/Customer2.jpg": "/Meta_Capstone_Project/static/media/Customer2.0a1a98c6db277f9df067.jpg",
+    "static/media/Customer1.jpg": "/Meta_Capstone_Project/static/media/Customer1.1627e43f356c8de8adba.jpg",
+    "index.html": "/Meta_Capstone_Project/index.html",
+    "main.d6af6158.css.map": "/Meta_Capstone_Project/static/css/main.d6af6158.css.map",
+    "main.ea2f2ae4.js.map": "/Meta_Capstone_Project/static/js/main.ea2f2ae4.js.map",
+    "488.9c92ff38.chunk.js.map": "/Meta_Capstone_Project/static/js/488.9c92ff38.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d6af6158.css",
+    "static/js/main.ea2f2ae4.js"
+  ]
+}
