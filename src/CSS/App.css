@@ -19,7 +19,6 @@
     "testimonials testimonials testimonials testimonials testimonials testimonials testimonials testimonials testimonials testimonials testimonials testimonials "
     "main main main main main main main main main main main main"
     "footer footer footer footer footer footer footer footer footer footer footer footer";
-  column-gap: 16px;
 }
 
 /* Nav Section */
@@ -68,8 +67,16 @@ footer {
   }
 
   header, main {
-    grid-column: 0 / span 10; /* Center header (columns 2-9 out of 10) */
+    grid-column: 1 / span 10;
     padding-top: 230px; /* Adjust based on the height of the nav */
+  }
+
+  .specials-section {
+    grid-column: 1 / span 10;
+  }
+
+  .testimonials-section {
+    grid-column: 1 / span 10;
   }
 
   #about-section {
@@ -97,6 +104,14 @@ footer {
         padding: 230px 10px 10px 10px;
     }
 
+    .specials-section {
+      grid-column: 1 / span 1;
+    }
+  
+    .testimonials-section {
+      grid-column: 1 / span 1;
+    }
+  
     footer {
         grid-column: 1 / span 1; /* Full-width footer */
     }
