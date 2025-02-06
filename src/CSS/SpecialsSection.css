@@ -23,7 +23,7 @@
   font-weight: bold;
 }
 
-.specials-cards {
+#specials-cards {
   margin: 30px 0 20px 0;
   grid-area: cards;
   grid-column: 3 / span 8;
@@ -79,7 +79,7 @@
     grid-column: 2 / span 8;
   }
 
-  .specials-cards {
+  #specials-cards {
     margin: 30px 0 20px 0;
     grid-area: cards;
     grid-column: 2 / span 8;
@@ -106,7 +106,7 @@
     flex-wrap: wrap;
   }
 
-  .specials-cards {
+  #specials-cards {
     margin: 30px 0 20px 0;
     grid-area: cards;
     grid-column: 2 / span 8;
@@ -135,7 +135,7 @@
     justify-content: center;
   }
 
-  .specials-cards {
+  #specials-cards {
     margin: 30px 0 20px 0;
     grid-area: cards;
     grid-column: 2;

@@ -35,7 +35,7 @@ const SpecialsSection = () => {
           <h2>This week's specials!</h2>
           <button className="view-menu-button">Online Menu</button>
         </div>
-        <div className="specials-cards">
+        <div id="specials-cards">
           {specials.map((special, index) => (
             <CardSpecials
               key={index}
