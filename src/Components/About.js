@@ -1,3 +1,4 @@
+import React from 'react';
 import '../CSS/About.css'
 import restaurant from '../Content/restaurant.jpg'
 import Mario_and_Adrian from '../Content/Mario_and_Adrian.jpg'
