@@ -86,7 +86,7 @@
 }
 
 /* Adjust grid and padding for medium screens */
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .specials-grid {
     grid-template-columns: repeat(10, 1fr); /* 12 equal columns */
     grid-template-rows: auto auto; /* Rows for header, main, and footer */
@@ -110,7 +110,7 @@
     grid-area: cards;
     grid-column: 2 / span 8;
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
     flex-wrap: wrap;
   }
 }
