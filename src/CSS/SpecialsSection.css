@@ -6,7 +6,7 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr); /* 12 equal columns */
   grid-template-rows: auto auto; /* Rows for header, main, and footer */
-  grid-template-areas: 
+  grid-template-areas:
     "header header header header header header header header header header header header"
     "cards cards cards cards cards cards cards cards cards cards cards cards"
   ;
@@ -68,7 +68,7 @@
     display: grid;
     grid-template-columns: repeat(10, 1fr); /* 12 equal columns */
     grid-template-rows: auto auto; /* Rows for header, main, and footer */
-    grid-template-areas: 
+    grid-template-areas:
       "header header header header header header header header header header"
       "cards cards cards cards cards cards cards cards cards cards"
     ;
@@ -141,7 +141,7 @@
     grid-column: 2;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center; 
   }
 
   .specials-flex h2 {
