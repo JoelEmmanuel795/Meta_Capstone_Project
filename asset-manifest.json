@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Meta_Capstone_Project/static/css/main.8bd1d4b8.css",
-    "main.js": "/Meta_Capstone_Project/static/js/main.6c18104a.js",
+    "main.css": "/Meta_Capstone_Project/static/css/main.2d5e73fd.css",
+    "main.js": "/Meta_Capstone_Project/static/js/main.19878e8c.js",
     "static/js/488.9c92ff38.chunk.js": "/Meta_Capstone_Project/static/js/488.9c92ff38.chunk.js",
     "static/media/header-img.jpg": "/Meta_Capstone_Project/static/media/header-img.1a27b4099b67004d1ae1.jpg",
     "static/media/reservations.png": "/Meta_Capstone_Project/static/media/reservations.0d7018b17e933783a5a2.png",
@@ -19,12 +19,12 @@
     "static/media/Customer2.jpg": "/Meta_Capstone_Project/static/media/Customer2.0a1a98c6db277f9df067.jpg",
     "static/media/Customer1.jpg": "/Meta_Capstone_Project/static/media/Customer1.1627e43f356c8de8adba.jpg",
     "index.html": "/Meta_Capstone_Project/index.html",
-    "main.8bd1d4b8.css.map": "/Meta_Capstone_Project/static/css/main.8bd1d4b8.css.map",
-    "main.6c18104a.js.map": "/Meta_Capstone_Project/static/js/main.6c18104a.js.map",
+    "main.2d5e73fd.css.map": "/Meta_Capstone_Project/static/css/main.2d5e73fd.css.map",
+    "main.19878e8c.js.map": "/Meta_Capstone_Project/static/js/main.19878e8c.js.map",
     "488.9c92ff38.chunk.js.map": "/Meta_Capstone_Project/static/js/488.9c92ff38.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8bd1d4b8.css",
-    "static/js/main.6c18104a.js"
+    "static/css/main.2d5e73fd.css",
+    "static/js/main.19878e8c.js"
   ]
 }
