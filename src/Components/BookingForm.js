@@ -16,6 +16,9 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
       selectedTime: "",
       guests: "",
       occasion: "",
+      firstName: "",   // ➜ ADDED
+      lastName: "",    // ➜ ADDED
+      email: "",       // ➜ ADDED
     },
     validationSchema: Yup.object({
       reservationDate: Yup.string()
@@ -29,9 +32,20 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         .min(1, "At least 1 guest required")
         .max(10, "Maximum 10 guests allowed"),
       occasion: Yup.string().required("Please select an occasion"),
+  
+      // ➜ NEW VALIDATION FIELDS
+      firstName: Yup.string()
+        .required("First name is required")
+        .min(2, "First name must be at least 2 characters"),
+      lastName: Yup.string()
+        .required("Last name is required")
+        .min(2, "Last name must be at least 2 characters"),
+      email: Yup.string()
+        .required("Email is required")
+        .email("Please enter a valid email address"),
     }),
     onSubmit: (values) => {
-      submitForm(values); // ✅ Uses submitForm from props
+      submitForm(values);
     },
   });
 
@@ -62,6 +76,39 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
 
   return (
     <form className="booking-form" onSubmit={formik.handleSubmit}>
+      {/* FIRST NAME */}
+      <label htmlFor="firstName">First Name</label>
+      <input
+        type="text"
+        id="firstName"
+        {...formik.getFieldProps("firstName")}
+      />
+      {formik.touched.firstName && formik.errors.firstName ? (
+        <div className="error">{formik.errors.firstName}</div>
+      ) : null}
+
+      {/* LAST NAME */}
+      <label htmlFor="lastName">Last Name</label>
+      <input
+        type="text"
+        id="lastName"
+        {...formik.getFieldProps("lastName")}
+      />
+      {formik.touched.lastName && formik.errors.lastName ? (
+        <div className="error">{formik.errors.lastName}</div>
+      ) : null}
+
+      {/* EMAIL */}
+      <label htmlFor="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        {...formik.getFieldProps("email")}
+      />
+      {formik.touched.email && formik.errors.email ? (
+        <div className="error">{formik.errors.email}</div>
+      ) : null}
+
       {/* ✅ Date Field */}
       <label htmlFor="reservation-date">Choose date</label>
       <input
@@ -133,6 +180,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         value="Make Your Reservation"
         aria-label="Confirm your reservation"
         disabled={!formik.isValid || !formik.dirty}
+        className="formSubmit"
       />
     </form>
   );

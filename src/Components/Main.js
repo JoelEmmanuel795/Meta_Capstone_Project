@@ -2,6 +2,9 @@ import React, { useReducer, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import BookingForm from "./BookingForm";
 import { fetchAPI, submitAPI } from './api';
+import reservations from '../Content/reservations.png'
+import rice_meat_dish from '../Content/rice_meat_dish.jpg'
+import dish_misc from '../Content/dish_misc.jpg'
 
 // Step 2.1: Update initializeTimes to use fetchAPI for today's date
 const initializeTimes = () => {
@@ -47,13 +50,20 @@ function Main() {
 
   return (
     <main>
-      <div className="container-booking">
-        <h1>Book a Table</h1>
-        {/*
-          Pass availableTimes and dispatch into the BookingForm.
-          BookingForm can dispatch("UPDATE_TIMES") whenever the user picks a new date.
-        */}
-        <BookingForm availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm}/>
+      <div className="container-booking-content">
+        <div className="container-booking-form">
+          <h1>Book a Table</h1>
+          {/*
+            Pass availableTimes and dispatch into the BookingForm.
+            BookingForm can dispatch("UPDATE_TIMES") whenever the user picks a new date.
+          */}
+          <BookingForm availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm}/>
+        </div>
+        <div className="reservation-images">
+          <img src={rice_meat_dish} alt="Rice and kebab dish" className="reservation-image reservation-image1"></img>
+          <img src={reservations} alt="Mediterranean salad dish" className="reservation-image reservation-image2"></img>
+          <img src={dish_misc} alt="Misc. Mediterranean dishes" className="reservation-image reservation-image3"></img>
+        </div>
       </div>
     </main>
   );

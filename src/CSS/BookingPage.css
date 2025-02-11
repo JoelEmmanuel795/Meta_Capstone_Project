@@ -1,24 +1,80 @@
 main {
-    background-color: #495E57;
+    background: linear-gradient(rgba(73, 94, 87, 0.9), rgba(73, 94, 87, 0.9)), 
+    url('../Content/restaurant-background.jpg'); /* Dark green overlay with background image */
+    background-size: cover; /* Ensures the image covers the entire element */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
     display: grid;
     grid-template-columns: repeat(12, 1fr); /* 12 equal columns */
     margin: 0; /* Remove gap above header */
-    position: relative;
 }
 
-.container-booking {
+.container-booking-content {
     grid-column: 3 / span 8; /* Centers the text */
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Two equal columns */
+    gap: 50px; /* Space between text and images */
+    padding: 30px 0px;
+    margin-bottom: 50px;
+}
+
+.container-booking-form {
     display: flex;
     flex-direction: column;
-    color: #FFFFFF; /* Ensure text is readable */
-    padding: 20px 20px 20px 0px;
-    gap: 0;
 }
 
-.container-booking h1 {
-    margin-bottom: 20px;
+.reservation-images {
+    position: relative; /* Enables image overlap */
+    display: flex; /* Stack images naturally */
+    justify-content: flex-end; /* Align images to the right */
+  }
+
+  .reservation-image {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+  }
+
+  .reservation-image1 {
+    position: absolute; /* Overlap images */
+    top: 260px;
+    left: 20px;
+    width: 380px; /* Adjust size for proportions */
+    z-index: 2; /* Ensure correct layering */
+  }
+
+  .reservation-image2 {
+    position: absolute; /* Overlap images */
+    top: 50px;
+    left: 150px;
+    width: 380px; /* Adjust size for proportions */
+    z-index: 3; /* Ensure correct layering */
+  }
+
+  .reservation-image3 {
+    position: absolute; /* Overlap images */
+    top: 500px;
+    left: 80px;
+    width: 380px; /* Adjust size for proportions */
+    z-index: 1; /* Ensure correct layering */
+  }
+
+.container-booking-form h1 {
+    font-size: 55pt;
+    margin-bottom: 30px;
+    white-space: nowrap;
 }
 
+p a {
+    color: aquamarine;
+}
+
+.editors-note {
+    font-size: 16px;
+}
+
+main p {
+    color: white;
+}
 
 /* Tablets: Adjust grid and padding for medium screens */
 @media (max-width: 1256px) {
@@ -26,23 +82,80 @@ main {
         grid-template-columns: repeat(10, 1fr); /* Adjust grid to 10 columns */
     }
 
-    .container-booking {
+    .container-booking-content {
         grid-column: 2 / span 8; /* Center text more tightly */
     }
 }
 
 /* Mobile: Stack content vertically */
-@media (max-width: 768px) {
-    main {
-        grid-template-columns: 1fr; /* Single-column layout */
-        grid-template-rows: auto; /* Stack rows */
-        text-align: center;
+@media (max-width: 1000px) {
+
+    .reservation-image1 {
+        position: absolute; /* Overlap images */
+        top: 220px;
+        left: -60px;
+        width: 300px; /* Adjust size for proportions */
+        z-index: 2; /* Ensure correct layering */
     }
 
-    .container-booking {
-        grid-column: 1 / span 1; /* Full width */
-        padding: 20px; /* Add padding for smaller screens */
-        text-align: center;
+    .reservation-image2 {
+        position: absolute; /* Overlap images */
+        top: 50px;
+        left: 70px;
+        width: 300px; /* Adjust size for proportions */
+        z-index: 3; /* Ensure correct layering */
+    }
+
+    .reservation-image3 {
+        position: absolute; /* Overlap images */
+        top: 400px;
+        left: 30px;
+        width: 300px; /* Adjust size for proportions */
+        z-index: 1; /* Ensure correct layering */
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr; /* 12 equal columns */
+        grid-template-rows: auto auto; /* Stack rows */
+    }
+
+    .container-booking-content {
+      grid-column: 1; /* Center text more tightly */
+      grid-template-columns: 1fr; /* Two equal columns */
+      grid-template-rows: auto auto;
+      padding: 10px  10px; /* Adjust padding for smaller screens */
+      text-align: center;
+      margin-bottom: 680px;
+    }
+
+    .container-booking-form{
+        align-items: center;
+    }
+
+    .reservation-image1 {
+        position: absolute; /* Overlap images */
+        top: 210px;
+        left: 60px;
+        width: 300px; /* Adjust size for proportions */
+        z-index: 2; /* Ensure correct layering */
+    }
+
+    .reservation-image2 {
+        position: absolute; /* Overlap images */
+        top: 40px;
+        left: 190px;
+        width: 300px; /* Adjust size for proportions */
+        z-index: 3; /* Ensure correct layering */
+    }
+
+    .reservation-image3 {
+        position: absolute; /* Overlap images */
+        top: 390px;
+        left: 150px;
+        width: 300px; /* Adjust size for proportions */
+        z-index: 1; /* Ensure correct layering */
     }
 }
 
@@ -53,11 +166,45 @@ main {
         grid-template-rows: auto auto; /* Stack rows */
     }
 
-    .container-booking {
+    .container-booking-form h1 {
+        font-size: 50pt;
+        margin-bottom: 30px;
+        white-space: nowrap;
+    }
+
+    .container-booking-content {
+        margin-bottom: 550px;
+    }
+
+    .container-booking-content, .container-booking-header {
         grid-column: 1 / span 1; /* Full width */
         padding: 10px; /* Add padding for smaller screens */
         text-align: center;
         flex-wrap: wrap; /* Ensure content wraps */
         gap: 10px; /* Add spacing between text items */
+    }
+
+    .reservation-image1 {
+        position: absolute; /* Overlap images */
+        top: 180px;
+        left: 0px;
+        width: 230px; /* Adjust size for proportions */
+        z-index: 2; /* Ensure correct layering */
+    }
+
+    .reservation-image2 {
+        position: absolute; /* Overlap images */
+        top: 40px;
+        left: 50px;
+        width: 230px; /* Adjust size for proportions */
+        z-index: 3; /* Ensure correct layering */
+    }
+
+    .reservation-image3 {
+        position: absolute; /* Overlap images */
+        top: 360px;
+        left: 40px;
+        width: 230px; /* Adjust size for proportions */
+        z-index: 1; /* Ensure correct layering */
     }
 }

@@ -2,9 +2,63 @@
     display: flex;
     flex-direction: column;
     max-width: 200px;
-    gap: 20px;
+    gap: 25px;
   }
 
 input:invalid {
   border: 2px solid red;
+}
+
+
+.booking-form input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fff;
+}
+
+.booking-form select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.booking-form label {
+  font-family: 'Karla', sans-serif;
+  color: #fffbeb;
+  margin-bottom: -12px;
+  font-size: 14pt;
+}
+
+/* Button styling */
+.booking-form .formSubmit {
+    background: #F4CE14;
+    color: #000;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.booking-form div.error {
+  font-family: 'Karla', sans-serif;
+  color: rgb(255, 188, 188);
+  font-size: 12pt;
+  margin-top: -20px;
+  font-style: italic;
+}
+
+input.formSubmit:disabled {
+  background: #919191;
+  color: white;
+}
+
+.booking-form .form-submit  {
+    background: #e0b813;
 }

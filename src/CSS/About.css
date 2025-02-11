@@ -107,8 +107,8 @@
     }
 
     .about-text {
-        grid-column: 1; /* Center text more tightly */
-    padding: 10px  10px; /* Adjust padding for smaller screens */
+      grid-column: 1; /* Center text more tightly */
+      padding: 10px  10px; /* Adjust padding for smaller screens */
     }
 
     .about-images {
