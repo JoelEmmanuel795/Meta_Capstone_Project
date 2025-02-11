@@ -41,7 +41,7 @@ input:invalid {
     padding: 10px;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 16px;
     transition: all 0.3s ease;
     margin-top: 20px;
 }

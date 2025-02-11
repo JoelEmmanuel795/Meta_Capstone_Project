@@ -33,7 +33,11 @@ const SpecialsSection = () => {
       <div className="specials-grid">
         <div className="specials-flex">
           <h2>This week's specials!</h2>
-          <button className="view-menu-button">Online Menu</button>
+          <button className="view-menu-button">
+            <a href="https://www.littlelemon.ie/wp-content/uploads/a-la-carte-Little-Lemon.pdf" target="_blank">
+              Online Menu
+            </a>
+          </button>
         </div>
         <div id="specials-cards" class="specials-cards">
           {specials.map((special, index) => (

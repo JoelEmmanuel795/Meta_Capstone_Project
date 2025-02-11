@@ -56,11 +56,14 @@ header {
     margin: 15px 0;
 }
 
-.container-header-text button:hover {
-    background-color: #D4B210; /* Darker yellow on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+button.reservationsButton a {
+    text-decoration: none;
+    color: #000000;
 }
 
+.container-header-text button:hover {
+    background-color: #d4b210;
+}
 
 /* Tablets: Adjust grid and padding for medium screens */
 @media (max-width: 1256px) {

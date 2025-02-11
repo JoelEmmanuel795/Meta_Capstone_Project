@@ -50,6 +50,17 @@ div .inner-flex {
     font-size: 16pt;
   }
 
+.active-link {
+    color: #F4CE14; /* Yellow color */
+    font-weight: bold;
+    border-bottom: 3px solid #F4CE14; /* Underline effect */
+    padding-bottom: 5px;
+}
+
+/* Optional: Hover effect for better UX */
+nav a:hover {
+    color: #F4CE14;
+}
 
   @media (max-width: 1256px) {
     nav ul {

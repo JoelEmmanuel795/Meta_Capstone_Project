@@ -1,5 +1,6 @@
 /* Main layout */
 #about-section {
+  margin-top: 30px;
     grid-column: 3 / span 8; /* Content spans columns 2-11 */
 }
 

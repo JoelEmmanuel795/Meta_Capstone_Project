@@ -1,6 +1,6 @@
-import '../CSS/BookingPage.css'
-import Main from './Main'
-import Footer from './Footer';
+import "../CSS/BookingPage.css";
+import Main from "./Main";
+import Footer from "./Footer";
 
 function BookingPage() {
 
@@ -10,7 +10,6 @@ function BookingPage() {
             <Footer />
         </>
     );
-};
+}
 
 export default BookingPage;
-

@@ -58,7 +58,7 @@ main {
     z-index: 1; /* Ensure correct layering */
   }
 
-.container-booking-form h1 {
+.container-booking-content h1 {
     font-size: 55pt;
     margin-bottom: 30px;
     white-space: nowrap;
@@ -74,6 +74,18 @@ p a {
 
 main p {
     color: white;
+}
+
+.editors-note {
+    font-size: 16px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+
+strong {
+    font-weight: 800;
 }
 
 /* Tablets: Adjust grid and padding for medium screens */
@@ -130,7 +142,7 @@ main p {
       margin-bottom: 680px;
     }
 
-    .container-booking-form{
+    .container-booking-form {
         align-items: center;
     }
 
@@ -157,6 +169,21 @@ main p {
         width: 300px; /* Adjust size for proportions */
         z-index: 1; /* Ensure correct layering */
     }
+
+    .container-booking-content h1.bookingConfirmed {
+        font-size: 50pt;
+        margin-bottom: 30px;
+        white-space: wrap;
+    }
+
+    .editors-note {
+        text-align: center;
+    }
+
+    .container-booking-content {
+        padding: 20px;
+        text-align: center;
+    }
 }
 
 /* Adjust typography and container alignment for small screens */
@@ -166,7 +193,7 @@ main p {
         grid-template-rows: auto auto; /* Stack rows */
     }
 
-    .container-booking-form h1 {
+    .container-booking-content h1 {
         font-size: 50pt;
         margin-bottom: 30px;
         white-space: nowrap;
@@ -174,6 +201,10 @@ main p {
 
     .container-booking-content {
         margin-bottom: 550px;
+    }
+
+    .container-booking-form {
+        padding: 0% 7%;
     }
 
     .container-booking-content, .container-booking-header {

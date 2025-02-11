@@ -1,0 +1,160 @@
+/* Main layout */
+#about-wrapper-section {
+    margin-top: 30px;
+      grid-column: 3 / span 8; /* Content spans columns 2-11 */
+  }
+  
+  .about-wrapper-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr; /* Two equal columns */
+      gap: 50px; /* Space between text and images */
+      padding: 30px 0px;
+      margin-bottom: 20%;
+    }
+    
+    /* Text styling */
+    .about-wrapper-text {
+      font-family: 'Karla', sans-serif;
+    }
+  
+    .about-wrapper-text h1 {
+      white-space: nowrap; 
+    }
+  
+    .about-wrapper-text h2 {
+      color: #ffffff;
+    }
+    
+  
+    .about-wrapper-text p {
+      font-size: 16px;
+      color: #ffffff;
+      line-height: 1.8;
+    }
+    
+  /* Image styling */
+  .about-wrapper-images {
+      position: relative; /* Enables image overlap */
+      display: flex; /* Stack images naturally */
+      justify-content: flex-end; /* Align images to the right */
+    }
+    
+    .about-wrapper-image {
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+    }
+    
+    .about-wrapper-image1 {
+      position: absolute; /* Overlap images */
+      top: 170px;
+      left: 70px;
+      width: 270px; /* Adjust size for proportions */
+      z-index: 2; /* Ensure correct layering */
+    }
+    
+    .about-wrapper-image2 {
+      position: absolute; /* Overlap images */
+      top: 0px;
+      left: 200px;
+      width: 270px; /* Adjust size for proportions */
+      z-index: 1; /* Ensure correct layering */
+    }
+    
+    @media (max-width: 1256px) {
+      #about-wrapper-section {
+          grid-column: 2/ span 8; /* Adjust grid to 10 columns */
+      }
+
+      .about-wrapper-grid {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr); /* Two equal columns */
+        gap: 50px; /* Space between text and images */
+        padding: 30px 0px;
+        margin-bottom: 20%;
+      }
+
+      .about-wrapper-text {
+        grid-column: 1/ span 4;
+          padding: 10px 70px 20px 0px;
+      }
+  
+      .about-wrapper-images {
+        grid-column: 5/ span 3;
+      }
+  
+      .about-wrapper-image1 {
+          position: absolute; /* Overlap images */
+          top: 170px;
+          left: 0;
+          width: 240px; /* Adjust size for proportions */
+          z-index: 2; /* Ensure correct layering */
+        }
+      .about-wrapper-image2 {
+      position: absolute; /* Overlap images */
+      top: 0px;
+      left: 130px;
+      width: 240px; /* Adjust size for proportions */
+      z-index: 1; /* Ensure correct layering */
+      }
+  }
+  
+    /* Responsive design */
+    @media (max-width: 768px) {
+      #about-wrapper-section {
+          grid-column: 1 / span 12;
+      }
+  
+      .about-wrapper-grid {
+        display: grid;
+        grid-template-columns: 1fr; /* Single column layout */
+        text-align: center;
+        padding: 20px 12px 0 12px;
+      }
+  
+      .about-wrapper-text {
+        grid-column: 1; /* Center text more tightly */
+        padding: 10px  10px; /* Adjust padding for smaller screens */
+      }
+  
+      .about-wrapper-images {
+        grid-column: 1;
+        position: static; /* Disable absolute positioning */
+        display: flex;
+        justify-content: center;
+        flex-direction: column; /* Stack images vertically */
+        align-items: center;
+      }
+    
+      .about-wrapper-image {
+        grid-column: 1;
+        margin: 10px 0; /* Add space between stacked images */
+        position: static; /* Reset positioning */
+      }
+      
+      .about-wrapper-text h1 {
+          font-size: 64px; /* Reduce font size for better fit */
+          word-break: break-word; /* Ensure long words break */
+          }
+      
+      .about-wrapper-text h2 {
+          font-size: 40px; /* Reduce font size for better fit */
+          word-break: break-word; /* Ensure long words break */
+          margin-top: 8px;
+          }
+    }
+  
+    @media (max-width: 500px) {
+      .about-wrapper-image {
+          width: 240px;
+      }
+  
+      .about-wrapper-text h1, .about-wrapper-text h2, .about-wrapper-text p {
+          overflow-wrap: break-word; /* Break long words */
+          word-wrap: break-word; /* Backward compatibility */
+          word-break: break-word; /* Break words as needed */
+          white-space: normal; /* Allow line breaks */
+          max-width: 100%; /* Constrain to parent width */
+      }
+    }
+  
+  

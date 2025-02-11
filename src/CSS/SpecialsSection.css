@@ -58,6 +58,11 @@
   background-color: #d4b210;
 }
 
+.view-menu-button a {
+  text-decoration: none;
+  color: #333;
+}
+
 /* Adjust grid and padding for medium screens */
 @media (max-width: 1256px) {
   .specials-section {

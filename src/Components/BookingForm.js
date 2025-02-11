@@ -152,6 +152,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         min="1"
         max="10"
         aria-label="Select a number of guests"
+        className="numberGuests"
         {...formik.getFieldProps("guests")}
       />
       {formik.touched.guests && formik.errors.guests ? (

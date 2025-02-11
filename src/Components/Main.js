@@ -1,5 +1,5 @@
 import React, { useReducer, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import BookingForm from "./BookingForm";
 import { fetchAPI, submitAPI } from './api';
 import reservations from '../Content/reservations.png'
@@ -25,10 +25,17 @@ const updateTimes = (state, action) => {
   }
 };
 
+
+
 function Main() {
   // useReducer to manage the array of available times
   const [availableTimes, dispatch] = useReducer(updateTimes, [], initializeTimes);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [location.pathname]); // Empty dependency array ensures this runs only on mount
 
   // Optional useEffect to “re‑fetch” on mount, or whenever you might want an effectful re-fetch.
   // With your synchronous fetchAPI, this is somewhat redundant, but useful if fetchAPI was truly async.
@@ -49,7 +56,7 @@ function Main() {
     };
 
   return (
-    <main>
+    <main id="reservations-section">
       <div className="container-booking-content">
         <div className="container-booking-form">
           <h1>Book a Table</h1>
