@@ -123,7 +123,7 @@
 @media (max-width: 480px) {
   .specials-grid {
     display: grid;
-    grid-template-columns: 20px 360px 20px; /* 12 equal columns */
+    grid-template-columns: 20px 1fr 20px; /* 12 equal columns */
     grid-template-rows: auto auto; /* Rows for header, main, and footer */
     grid-template-areas:
       "header header header"

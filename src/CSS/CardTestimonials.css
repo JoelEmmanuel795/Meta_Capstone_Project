@@ -18,7 +18,7 @@
 .testimonial-flex {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
 }
 
 .testimonial-rating {
@@ -50,6 +50,7 @@
   font-size: 14px;
   color: #555;
   line-height: 1.5;
+  white-space: flex;
 }
 
 @media (max-width: 1024px) {

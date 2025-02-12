@@ -106,11 +106,11 @@ footer {
     .specials-section {
       grid-column: 1 / span 1;
     }
-  
+
     .testimonials-section {
       grid-column: 1 / span 1;
     }
-  
+
     footer {
         grid-column: 1 / span 1; /* Full-width footer */
     }

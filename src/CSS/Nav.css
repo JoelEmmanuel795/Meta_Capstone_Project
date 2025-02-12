@@ -30,10 +30,10 @@ nav {
   background-color: #fff;
   border: 1px solid #ccc;
   border-top: 0px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 3px 5px rgba(0,0,0,0.2);
   border-radius: 0 0 15px 15px;
   z-index: 1001;
-  width: 200px;
+  width: 180px;
   opacity: 0;
   transform: translateY(-20px);
   visibility: hidden;
@@ -136,7 +136,7 @@ nav a:hover {
   @media (max-width: 1256px) {
     nav ul {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-end;
         gap: 20px;
       }
   }
@@ -154,7 +154,7 @@ nav a:hover {
   @media (max-width: 768px) {
     nav ul {
       flex-direction: column; /* Stack links vertically */
-      align-items: center;
+      align-items: top;
       gap: 10px;
     }
 
