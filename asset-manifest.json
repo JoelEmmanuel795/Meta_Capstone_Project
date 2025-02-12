@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Meta_Capstone_Project/static/css/main.138bc931.css",
+    "main.css": "/Meta_Capstone_Project/static/css/main.9d94e3e1.css",
     "main.js": "/Meta_Capstone_Project/static/js/main.ebbff373.js",
     "static/js/488.9c92ff38.chunk.js": "/Meta_Capstone_Project/static/js/488.9c92ff38.chunk.js",
     "static/media/header-img.jpg": "/Meta_Capstone_Project/static/media/header-img.1a27b4099b67004d1ae1.jpg",
@@ -22,12 +22,12 @@
     "static/media/Customer1.jpg": "/Meta_Capstone_Project/static/media/Customer1.1627e43f356c8de8adba.jpg",
     "index.html": "/Meta_Capstone_Project/index.html",
     "static/media/icon_hamburger_menu.svg": "/Meta_Capstone_Project/static/media/icon_hamburger_menu.0da6f67ced800ab909f63d5144de37ee.svg",
-    "main.138bc931.css.map": "/Meta_Capstone_Project/static/css/main.138bc931.css.map",
+    "main.9d94e3e1.css.map": "/Meta_Capstone_Project/static/css/main.9d94e3e1.css.map",
     "main.ebbff373.js.map": "/Meta_Capstone_Project/static/js/main.ebbff373.js.map",
     "488.9c92ff38.chunk.js.map": "/Meta_Capstone_Project/static/js/488.9c92ff38.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.138bc931.css",
+    "static/css/main.9d94e3e1.css",
     "static/js/main.ebbff373.js"
   ]
 }
