@@ -3,13 +3,84 @@ nav {
   grid-template-columns: repeat(12, 1fr); /* 12 equal columns */
   width: 100%;
   padding: 16px 20px;
-  background-color: white;
+  background-color: #fff;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
 }
+
+.hamburger-icon {
+  cursor: pointer;
+  width: 30px; /* adjust as needed */
+  height: auto;
+}
+
+/* Mobile navigation container */
+.mobile-nav {
+  position: relative;
+}
+
+/* Mobile menu drop-down with animation */
+.mobile-menu {
+  position: absolute;
+  top: 40px; /* Adjust depending on your nav height */
+  right: -10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top: 0px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border-radius: 0 0 15px 15px;
+  z-index: 1001;
+  width: 200px;
+  opacity: 0;
+  transform: translateY(-20px);
+  visibility: hidden;
+  transition: opacity 0.4s ease-out, bottom 0.4s ease-in-out, transform 0.4s ease-out, visibility 0.4s;
+}
+
+/* When menu is open, make it visible */
+.mobile-menu.open {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  transition: top 0.4s ease-in-out;
+}
+
+.nav.hidden .mobile-menu.open {
+  top: -450px; /* Moves nav out of view */
+  visibility: visible;
+}
+
+/* Mobile menu list styling */
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-menu li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.mobile-menu li:last-child {
+  border-bottom: none;
+}
+
+/* Optionally, adjust mobile menu link styles */
+.mobile-menu a,
+.mobile-menu a:visited {
+  text-decoration: none;
+  display: block;
+}
+
+/* Optional hover effect */
+.mobile-menu a:hover {
+  color: #F4CE14;
+}
+
 
 div .inner-flex {
     grid-column: 3 / span 8;
@@ -64,7 +135,8 @@ nav a:hover {
 
   @media (max-width: 1256px) {
     nav ul {
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
         gap: 20px;
       }
   }

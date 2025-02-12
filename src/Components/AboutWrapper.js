@@ -16,6 +16,10 @@ function AboutWrapper() {
                             <h1>Little Lemon</h1>
                             <h2>Chicago</h2>
                             <p>Based in Chicago, Illinois, Little Lemon is a family-owned Mediterranean restaurant, focused on traditional recipes served with a modern twist. The chefs draw inspiration from Italian, Greek, and Turkish culture and have a menu of 12–15 items that they rotate seasonally. The restaurant has a rustic and relaxed atmosphere with moderate prices, making it a popular place for a meal any time of the day.</p>
+                            <h3 className="reachOut"><br/><br/>Reach out to us</h3>
+                            <p><strong>Address:</strong><br /> Little Lemon Restaurant<br /> 123 Main Street, Anytown, USA 12345</p>
+                            <p><strong>Email:</strong><br /> info@littlelemon.com</p>
+                            <p><strong>Phone:</strong><br /> (555) 123-4567</p>
                         </div>
                         <div className="about-wrapper-images">
                             <img src={Mario_and_Adrian} className="about-wrapper-image about-wrapper-image1" alt="Mario and Adrian smiling in the kitchen"/>

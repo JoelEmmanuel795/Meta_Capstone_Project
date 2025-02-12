@@ -1,28 +1,85 @@
+/* Footer Styles */
 footer {
-    background-color: #797979;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    background-color: #2a3d34; /* Dark green background */
 }
 
-.container-footer {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 20px 0;
-    background-color: #797979;
+.footer {
+    grid-column: 2 / span 10;
     color: #fff;
-    gap: 40px;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    text-align: left;
 }
 
-footer div {
-    flex: 1;
-    margin: 0 10px;
+.footer div {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Karla', sans-serif;
+    padding: 10px;
 }
 
-@media (max-width: 768px) { /* Stack footer sections */
-    footer {
+.footer-contact p {
+    color: #eeeded;
+    font-size: 16px;
+}
+
+/* Footer Sections */
+.footer h3 {
+    color: #cf9c04; /* Yellowish color */
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer p, .footer ul {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin-bottom: 5px;
+}
+
+.footer ul li a {
+    text-decoration: none;
+    color: #eeeded;
+}
+
+.footer ul li a:hover {
+    color: #FFC107;
+}
+
+strong {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .footer {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on tablets */
+        text-align: left;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        grid-template-columns: 1fr; /* One column on mobile */
         text-align: center;
     }
+    
+    .footer div {
+        align-items: center;
+    }
 
-    footer div {
-        margin: 10px 0;
+    .footer ul {
+        padding: 0;
     }
 }

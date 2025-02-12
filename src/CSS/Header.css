@@ -1,5 +1,9 @@
 header {
-    background-color: #495E57;
+    background: linear-gradient(rgba(69, 88, 82, 0.92), rgba(69, 88, 82, 0.92)),
+    url('../Content/watermark-background.png'); /* Dark green overlay with background image */
+    background-size: cover; /* Ensures the image covers the entire element */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
     display: grid;
     grid-template-columns: repeat(12, 1fr); /* 12 equal columns */
     margin: 0; /* Remove gap above header */
@@ -53,7 +57,7 @@ header {
     transition: all 0.3s ease; /* Smooth hover transition */
     text-align: center; /* Center text */
     white-space: nowrap; /* Prevent wrapping */
-    margin: 15px 0;
+    margin: 15px 0 30px 0;
 }
 
 button.reservationsButton a {
@@ -73,7 +77,7 @@ button.reservationsButton a {
 
     .container-header-text {
         grid-column: 2 / span 5; /* Center text more tightly */
-        padding: 10px 70px 20px 0px;
+        padding: 10px 90px 20px 0px;
     }
 
     .container-header-img {
@@ -82,11 +86,16 @@ button.reservationsButton a {
 
     .container-header-img img {
         width: 300px; /* Reduce image size */
+        top: 70px; /* Adjust the image upward */
     }
 }
 
+.container-header-text h1 {
+    white-space: nowrap;
+}
+
 /* Mobile: Stack content vertically */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     header {
         grid-template-columns: 1fr; /* Single-column layout */
         grid-template-rows: auto auto; /* Stack rows */
@@ -119,6 +128,10 @@ button.reservationsButton a {
     .container-header-text button {
         font-size: 18px; /* Smaller font size */
         padding: 10px 20px; /* Adjust button size */
+    }
+
+    .container-header-text h1 {
+        white-space: wrap;
     }
 }
 

@@ -1,10 +1,10 @@
-import React, { useReducer, useEffect } from "react";
+import React, { useReducer, useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import BookingForm from "./BookingForm";
 import { fetchAPI, submitAPI } from './api';
-import reservations from '../Content/reservations.png'
-import rice_meat_dish from '../Content/rice_meat_dish.jpg'
-import dish_misc from '../Content/dish_misc.jpg'
+import reservations from '../Content/reservations.png';
+import rice_meat_dish from '../Content/rice_meat_dish.jpg';
+import dish_misc from '../Content/dish_misc.jpg';
 
 // Step 2.1: Update initializeTimes to use fetchAPI for today's date
 const initializeTimes = () => {
@@ -25,17 +25,19 @@ const updateTimes = (state, action) => {
   }
 };
 
-
-
 function Main() {
   // useReducer to manage the array of available times
   const [availableTimes, dispatch] = useReducer(updateTimes, [], initializeTimes);
   const navigate = useNavigate();
   const location = useLocation();
+  const reservationsRef = useRef(null);
 
+  // On mount or route change, scroll to the reservations section.
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [location.pathname]); // Empty dependency array ensures this runs only on mount
+    if (location.pathname === "/reservations" && reservationsRef.current) {
+      reservationsRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [location.pathname]);
 
   // Optional useEffect to “re‑fetch” on mount, or whenever you might want an effectful re-fetch.
   // With your synchronous fetchAPI, this is somewhat redundant, but useful if fetchAPI was truly async.
@@ -69,7 +71,7 @@ function Main() {
         <div className="reservation-images">
           <img src={rice_meat_dish} alt="Rice and kebab dish" className="reservation-image reservation-image1"></img>
           <img src={reservations} alt="Mediterranean salad dish" className="reservation-image reservation-image2"></img>
-          <img src={dish_misc} alt="Misc. Mediterranean dishes" className="reservation-image reservation-image3"></img>
+          <img src={dish_misc} alt="Misc. Mediterranean dishes: pizza, kebab, peta, etc." className="reservation-image reservation-image3"></img>
         </div>
       </div>
     </main>
