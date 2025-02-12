@@ -1,5 +1,6 @@
 import React from 'react';
 import '../CSS/CardSpecials.css'; // Ensure styles are responsive
+import { Link } from 'react-router-dom';
 
 const CardSpecials = ({ image, title, description, price }) => {
   return (
@@ -12,9 +13,13 @@ const CardSpecials = ({ image, title, description, price }) => {
         </div>
         <p className="card-description">{description}</p>
         <div className="card-footer">
-          <button className="order-button">
-            Order a delivery <span className="order-icon">🚚</span>
-          </button>
+            <Link
+              to="/order-online/under-construction"
+            >
+              <button className="order-button">
+                Order a delivery <span className="order-icon">🚚</span>
+              </button>
+            </Link>
         </div>
       </div>
     </div>

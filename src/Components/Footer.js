@@ -1,5 +1,6 @@
 import '../CSS/Footer.css'
 import logo_vert from "../Content/logo_vert.png";
+import { Link } from 'react-router-dom';
 
 // function Footer(props) {
 //     return (
@@ -35,20 +36,20 @@ export default function Footer() {
             <div className="footer-info">
                 <h3>Get to know us</h3>
                 <ul>
-                <li><a href="/about">About</a></li>
-                <li><a href="/careers">Careers</a></li>
-                <li><a href="/press">Press Releases</a></li>
-                <li><a href="/recipes">Exclusive Recipes</a></li>
-                <li><a href="/kitchen">Our Kitchen</a></li>
+                <li><Link to="/about-us">About</Link></li>
+                <li><a>Careers</a></li>
+                <li><a>Press Releases</a></li>
+                <li><a>Exclusive Recipes</a></li>
+                <li><a>Our Kitchen</a></li>
                 </ul>
             </div>
 
             <div className="footer-social">
                 <h3>Connect with us</h3>
                 <ul>
-                <li><a href="https://facebook.com">Facebook</a></li>
-                <li><a href="https://instagram.com">Instagram</a></li>
-                <li><a href="https://linkedin.com">LinkedIn</a></li>
+                <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
+                <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+                <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
                 </ul>
             </div>
         </div>

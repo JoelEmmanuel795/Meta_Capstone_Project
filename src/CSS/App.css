@@ -68,7 +68,6 @@ footer {
 
   header, main {
     grid-column: 1 / span 10;
-    padding-top: 230px; /* Adjust based on the height of the nav */
   }
 
   .specials-section {
@@ -101,7 +100,7 @@ footer {
         grid-column: 1 / span 1; /* Full-width header */
         max-width: 100%; /* Prevents overflow beyond viewport */
         overflow-x: hidden; /* Hides any content spilling outside */
-        padding: 230px 10px 10px 10px;
+        padding: 100px 10px 10px 10px;
     }
 
     .specials-section {

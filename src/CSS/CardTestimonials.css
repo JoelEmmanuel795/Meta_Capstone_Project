@@ -10,6 +10,11 @@
   align-items: flex-start;
 }
 
+.testimonial-card p {
+  font-size: 12pt;
+}
+
+
 .testimonial-flex {
   display: flex;
   align-items: center;

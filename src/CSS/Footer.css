@@ -25,6 +25,7 @@ footer {
 .footer-contact p {
     color: #eeeded;
     font-size: 16px;
+    margin-bottom: 5px;
 }
 
 /* Footer Sections */
@@ -51,6 +52,7 @@ footer {
 .footer ul li a {
     text-decoration: none;
     color: #eeeded;
+    cursor: pointer;
 }
 
 .footer ul li a:hover {

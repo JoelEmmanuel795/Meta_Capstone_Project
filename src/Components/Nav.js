@@ -160,20 +160,24 @@ function Nav(props) {
         </Link>
       </li>
       <li>
-        <a 
-          href="https://github.com/JoelEmmanuel795/Meta_Capstone_Project" 
-          aria-label="Order Online"
+        <Link
+          to="/order-online/under-construction"
+          onClick={() => { setMobileMenuOpen(false) }}
+          className={location.pathname === "/order-online/under-construction" ? "active-link" : ""}
+          aria-label="Go to Order Online Section (currently under construction)"
         >
           Order Online
-        </a>
+        </Link>
       </li>
       <li>
-        <a 
-          href="https://github.com/JoelEmmanuel795/Meta_Capstone_Project" 
-          aria-label="Login"
+        <Link
+          to="/login/under-construction"
+          onClick={() => { setMobileMenuOpen(false) }}
+          className={location.pathname === "/login/under-construction" ? "active-link" : ""}
+          aria-label="Go to Login Section (currently under construction)"
         >
           Login
-        </a>
+        </Link>
       </li>
     </ul>
   );

@@ -27,7 +27,7 @@
   
 
   .about-text p {
-    font-size: 16px;
+    font-size: 17px;
     color: #353535;
     line-height: 1.8;
   }
@@ -109,7 +109,7 @@
 
     .about-text {
       grid-column: 1; /* Center text more tightly */
-      padding: 10px  10px; /* Adjust padding for smaller screens */
+      padding: 10px 30px; /* Adjust padding for smaller screens */
     }
 
     .about-images {
