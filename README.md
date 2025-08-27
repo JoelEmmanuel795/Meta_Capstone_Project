@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 # Little Lemon Restaurant – Meta Front-End Developer Capstone
 
 Welcome to the capstone project for the Meta Front-End Developer Specialization. This repository demonstrates a professional, production-ready React application for the fictional "Little Lemon Restaurant." The project showcases modern front-end development best practices, including responsive design, form validation, state management, and component-driven architecture.
